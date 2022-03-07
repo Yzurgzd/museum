@@ -6,7 +6,7 @@ from rest_framework.filters import SearchFilter
 
 
 class HeroesListAPIView(generics.ListAPIView):
-    queryset = Hero.objects.filter(verified=True)
+    queryset = Hero.objects.filter(verified=True).order_by('-date_added')
     serializer_class = HeroesListSerializer
     pagination_class = StandardResultsSetPagination
     filter_backends = [SearchFilter, ]

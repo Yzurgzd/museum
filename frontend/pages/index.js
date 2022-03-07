@@ -17,7 +17,7 @@ export default function Home() {
         data-widget="block"
         data-spacing="lala"
         style={{
-          backgroundImage: "url(/static/img/bg/mt-1505-content-bg-1.jpg)",
+          backgroundImage: "url(/assets/img/bg/mt-1505-content-bg-1.jpg)",
           backgroundPosition: "top",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -121,7 +121,7 @@ export default function Home() {
         data-widget="block"
         data-spacing="lala"
         style={{
-          backgroundImage: "url(/static/img/bg/mt-1505-content-bg-2.jpg)",
+          backgroundImage: "url(/assets/img/bg/mt-1505-content-bg-2.jpg)",
           backgroundPosition: "bottom",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -267,7 +267,7 @@ export default function Home() {
         data-widget="block"
         data-spacing="lala"
         style={{
-          backgroundImage: "url(/static/img/bg/mt-1505-content-bg-3.jpg)",
+          backgroundImage: "url(/assets/img/bg/mt-1505-content-bg-3.jpg)",
           backgroundPosition: "left top",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -621,7 +621,7 @@ export default function Home() {
                       className="moto-widget moto-widget-row__column moto-cell col-sm-6 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
                       style={{
                         backgroundImage:
-                          "url(/static/img/bg/mt-1505-content-bg-4.jpg)",
+                          "url(/assets/img/bg/mt-1505-content-bg-4.jpg)",
                         backgroundPosition: "center",
                         backgroundRepeat: "no-repeat",
                         backgroundSize: "cover",
@@ -725,6 +725,7 @@ export default function Home() {
                       <>
                         {heroes.map((hero) => (
                           <div
+                            key={hero.id}
                             className="moto-widget moto-widget-row__column moto-cell col-sm-4 moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
                             data-widget="row.column"
                             data-container="container"
@@ -770,14 +771,14 @@ export default function Home() {
                                   </span>
                                 </p>
                                 <p className="moto-text_231">
-                                  <a
-                                    href="blog/index.html"
-                                    data-action="blog.index"
-                                    data-id="3"
-                                    className="moto-link"
+                                  <Link
+                                    href={`/hero/[id]`}
+                                    as={`/hero/${hero.id}`}
                                   >
-                                    {hero.last_name} {hero.first_name}
-                                  </a>
+                                    <a className="moto-link">
+                                      {hero.last_name} {hero.first_name}
+                                    </a>
+                                  </Link>
                                 </p>
                               </div>
                             </div>
@@ -793,24 +794,24 @@ export default function Home() {
 
               {heroes && heroes.length > 5 && (
                 <div
-                  class="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
+                  className="moto-widget moto-widget-row row-fixed moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto"
                   data-grid-type="sm"
                   data-widget="row"
                   data-spacing="aaaa"
                 >
-                  <div class="container-fluid">
+                  <div className="container-fluid">
                     <div
                       data-widget-id="wid_1529604808_vvembcpgl"
-                      class="moto-widget moto-widget-button moto-preset-2 moto-preset-provider-default moto-align-center moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto  "
+                      className="moto-widget moto-widget-button moto-preset-2 moto-preset-provider-default moto-align-center moto-spacing-top-auto moto-spacing-right-auto moto-spacing-bottom-auto moto-spacing-left-auto  "
                       data-widget="button"
                     >
                       <Link href={`/heroes`}>
                         <a
                           data-action="page"
-                          class="moto-widget-button-link moto-size-medium moto-link"
+                          className="moto-widget-button-link moto-size-medium moto-link"
                         >
-                          <span class="fa moto-widget-theme-icon"></span>{" "}
-                          <span class="moto-widget-button-label">
+                          <span className="fa moto-widget-theme-icon"></span>{" "}
+                          <span className="moto-widget-button-label">
                             Смотреть больше
                           </span>
                         </a>

@@ -5,7 +5,7 @@ import Layout from "../../components/layout";
 import Image from "next/image";
 import Link from "next/link";
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   const hero = await fetcher(`${process.env.API_URL}/hero/${params.id}/`);
   return {
     props: {
@@ -16,21 +16,10 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export async function getStaticPaths() {
-  const heroes = await fetcher(`${process.env.API_URL}/heroes/`);
-  const paths = heroes.results.map((hero) => ({
-    params: { id: hero.id.toString() },
-  }));
-  return { paths, fallback: false };
-}
-
 function Content() {
   const router = useRouter();
   const query = router.query;
-  const { data: hero } = useSWR(
-    `${process.env.API_URL}/hero/${query.id}/`,
-    fetcher
-  );
+  const { data: hero } = useSWR(`${process.env.API_URL}/hero/${query.id}/`);
 
   const { data: last_heroes } = useSWR(
     `${process.env.API_URL}/heroes/last/`,

@@ -26,6 +26,9 @@ class Hero(models.Model):
             if old_hero.verified == False and self.verified == True:
                 send_status.delay(
                     self.email, 'Мы обработали вашу заявку в Музее славы.')
+            elif old_hero.verified == True and self.verified == False:
+                send_status.delay(
+                    self.email, 'Нам пришлось снять вашу заявку в Музее славы.')
         super(Hero, self).save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):

@@ -77,7 +77,7 @@ export default function Header() {
                                         className="moto-widget-image-picture lazyload"
                                         width={50}
                                         height={50}
-                                        src="/static/img/logos/logo_ngpu.png"
+                                        src="/assets/img/logos/logo_ngpu.png"
                                         title=""
                                         alt=""
                                       />

@@ -164,4 +164,8 @@ psd
 thumb
 sketch
 
-# End of https://www.toptal.com/developers/gitignore/api/react,django
+# Docker
+docker-compose.yml
+data/
+Dockerfile
+nginx/

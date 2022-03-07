@@ -253,11 +253,7 @@ export default function Heroes() {
                             }
                             initialPage={index_page}
                             forcePage={index_page}
-                            pageCount={
-                              data
-                                ? Math.floor(data.count / data.results.length)
-                                : 1
-                            }
+                            pageCount={data ? data.page_count : 1}
                             onPageChange={(page) =>
                               setCurrentPage(page.selected)
                             }

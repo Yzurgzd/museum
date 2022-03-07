@@ -20,7 +20,10 @@ export default function Editor({ onChange, editorLoaded, name, value }) {
             name={name}
             editor={ClassicEditor}
             config={{
-              toolbar: ["heading", "bold", "italic"],
+              toolbar: ["heading", "bold", "italic", "uploadImage"],
+              ckfinder: {
+                uploadUrl: "http://127.0.0.1:8000/ckeditor/upload/",
+              },
             }}
             data={value}
             onChange={(event, editor) => {

@@ -74,7 +74,7 @@ export default function Footer() {
                                       className="moto-widget-image-picture lazyload"
                                       width={50}
                                       height={50}
-                                      src="/static/img/logos/logo_archeo.png"
+                                      src="/assets/img/logos/logo_archeo.png"
                                       data-id="260"
                                       title=""
                                       alt=""
@@ -150,7 +150,7 @@ export default function Footer() {
                             &nbsp; &nbsp;
                             <a
                               href="https://vk.com/tatngpu"
-                              target="_blank"
+                              rel="noopener"
                               className="moto-link"
                             >
                               ФГБОУ ВО НГПУ
@@ -164,7 +164,7 @@ export default function Footer() {
                             <a
                               className="moto-link"
                               href="https://vk.com/arheoclub"
-                              target="_blank"
+                              rel="noopener"
                             >
                               Antigua
                             </a>
@@ -252,7 +252,7 @@ export default function Footer() {
                             <a
                               className="moto-link"
                               target="_blank"
-                              href="/static/files/terms-use.pdf"
+                              href="/assets/files/terms-use.pdf"
                             >
                               пользовательского соглашения
                             </a>

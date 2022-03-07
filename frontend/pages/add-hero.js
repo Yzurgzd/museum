@@ -410,7 +410,7 @@ export default function AddHero() {
                                         htmlFor="field_message_wid__contact_form__5b18e5dd7a183"
                                         className="moto-widget-contact_form-label"
                                       >
-                                        Message
+                                        Описание
                                       </label>
                                       <Editor
                                         name="description"

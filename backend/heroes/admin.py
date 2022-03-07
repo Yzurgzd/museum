@@ -1,13 +1,13 @@
 from django import forms
 from django.contrib import admin
 from .models import Hero
-from ckeditor.widgets import CKEditorWidget
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django.utils.safestring import mark_safe
 
 
 class HeroAdminForm(forms.ModelForm):
     description = forms.CharField(
-        label='Описание', widget=CKEditorWidget())
+        label='Описание', widget=CKEditorUploadingWidget())
 
     class Meta:
         model = Hero

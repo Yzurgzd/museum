@@ -14,8 +14,7 @@ class MyDocument extends Document {
             rel="preload"
             as="font"
             type="font/woff2"
-            crossorigin
-            href="/static/fonts/fontawesome-webfont.woff2@v=4.7.0"
+            href="/assets/fonts/fontawesome-webfont.woff2@v=4.7.0"
           />
         </Head>
         <body>
